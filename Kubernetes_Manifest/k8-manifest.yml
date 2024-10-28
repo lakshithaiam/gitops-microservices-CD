@@ -29,7 +29,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/currencyservice:v2
+        image: lakshithaiam/currencyservice:v9
         ports:
         - name: grpc
           containerPort: 7000
