@@ -188,7 +188,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/productcatalogservice:latest
+        image: lakshithaiam/productcatalogservice:v7
         ports:
         - containerPort: 3550
         env:
