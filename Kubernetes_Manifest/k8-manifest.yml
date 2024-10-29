@@ -899,7 +899,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/adservice:v2
+        image: lakshithaiam/adservice:v7
         ports:
         - containerPort: 9555
         env:
