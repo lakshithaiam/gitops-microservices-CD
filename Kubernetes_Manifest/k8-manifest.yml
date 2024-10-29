@@ -138,7 +138,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/loadgenerator:latest
+        image: lakshithaiam/loadgenerator:v7
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
