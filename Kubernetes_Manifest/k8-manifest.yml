@@ -416,7 +416,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/cartservice:v7
+        image: lakshithaiam/cartservice:v7.1
         ports:
         - containerPort: 7070
         env:
