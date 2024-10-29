@@ -342,7 +342,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/shippingservice:latest
+        image: lakshithaiam/shippingservice:v7
         ports:
         - containerPort: 50051
         env:
