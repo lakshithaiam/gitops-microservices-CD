@@ -559,7 +559,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/emailservice:latest
+        image: lakshithaiam/emailservice:v7
         ports:
         - containerPort: 8080
         env:
