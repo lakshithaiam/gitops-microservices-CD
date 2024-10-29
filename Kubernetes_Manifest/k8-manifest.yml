@@ -822,7 +822,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/recommendationservice:latest
+        image: lakshithaiam/recommendationservice:v7
         ports:
         - containerPort: 8080
         readinessProbe:
