@@ -634,7 +634,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: lakshithaiam/paymentservice:latest
+        image: lakshithaiam/paymentservice:v7
         ports:
         - containerPort: 50051
         env:
