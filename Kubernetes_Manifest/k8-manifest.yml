@@ -708,7 +708,7 @@ spec:
                 - ALL
             privileged: false
             readOnlyRootFilesystem: true
-          image: lakshithaiam/frontend:latest
+          image: lakshithaiam/frontend:v7
           ports:
           - containerPort: 8080
           readinessProbe:
