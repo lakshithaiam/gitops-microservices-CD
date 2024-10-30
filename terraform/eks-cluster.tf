@@ -18,9 +18,9 @@ module "eks" {
 
   eks_managed_node_groups = {
     dev = {
-      min_size     = 2
+      min_size     = 4
       max_size     = 10
-      desired_size = 10
+      desired_size = 6
 
       instance_types = ["t2.small"]
     }
