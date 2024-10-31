@@ -2,7 +2,7 @@
 
 This project demonstrates a GitOps-enabled DevOps pipeline for deploying an 11-tier microservices e-commerce application based on Google’s Online Boutique demo. Using GitOps principles, ArgoCD automates continuous deployment, synchronizing the application’s Git repository state with the live Kubernetes environment. The CI/CD workflow is managed across two repositories: one for continuous integration (CI) and another for continuous deployment (CD).
 
-[CI REPOSITORIE:](https://github.com/GoogleCloudPlatform/microservices-demo)
+[CI REPOSITORIE:](https://github.com/lakshithaiam/gitops-microservices-CI.git)
 
 ## Acknowledgements
 
@@ -62,14 +62,24 @@ The pipeline automates the full lifecycle of building, deploying, and monitoring
    - Terraform is used to provision the necessary AWS infrastructure: EC2 instances, VPCs, security groups, and the EKS cluster.
    - Terraform ensures that the infrastructure is scalable and secure, utilizing auto-scaling groups for EC2 instances and network security groups for fine-tuned access control.
 
-7. **ArgoCD Deployment to Kubernetes**  
-   - **ArgoCD**: ArgoCD watches the CD repository for changes. Upon detecting a new version tag in `k8-manifest.yml`, ArgoCD initiates a deployment to Kubernetes with the latest Docker image.
-   - **Namespace**: Microservices are deployed in a designated namespace within the EKS cluster for organized resource management.
+7. **ArgoCD Deployment and Namespace Structure**  
+   **ArgoCD Deployment to Kubernetes**
+   - **ArgoCD**: Monitors the CD repository for changes. Upon detecting a new version tag in `k8-manifest.yml`, ArgoCD automatically synchronizes the Kubernetes environment, deploying the latest Docker image for the application.
+   - 
+   **Namespace Structure**
+   - **Microservices Namespace**: 
+   - Dedicated to deploying all application microservices, providing organized resource management and isolation within the EKS cluster.
 
-7. **Deploying the Monitoring Stack with Helm**  
+   - **ArgoCD Namespace**: 
+   - Used exclusively for ArgoCD, enabling secure access control and streamlined GitOps operations separate from the application workloads.
+
+   - **Monitoring Namespace**: 
+   - Contains the monitoring stack, including Prometheus and Grafana, for centralized metrics collection and visualization of application and infrastructure performance.
+   
+8. **Deploying the Monitoring Stack with Helm**  
    - **Helm Chart**: Prometheus and Grafana are deployed using a Helm chart.
 
-8. **Load Balancing and Scaling**  
+9. **Load Balancing and Scaling**  
    - **Microservices Load Balancer**: Distributes incoming traffic across frontend replicas, ensuring resilience and availability for the application's main interface.
    - **ArgoCD Load Balancer**: Provides external access to ArgoCD for managing and synchronizing application deployments.
    - **Grafana Load Balancer**: Allows secure, external access to Grafana dashboards for monitoring microservices and infrastructure performance.
