@@ -65,16 +65,11 @@ The pipeline automates the full lifecycle of building, deploying, and monitoring
 7. **ArgoCD Deployment and Namespace Structure**  
    **ArgoCD Deployment to Kubernetes**
    - **ArgoCD**: Monitors the CD repository for changes. Upon detecting a new version tag in `k8-manifest.yml`, ArgoCD automatically synchronizes the Kubernetes environment, deploying the latest Docker image for the application.
-   - 
+     
    **Namespace Structure**
-   - **Microservices Namespace**: 
-   - Dedicated to deploying all application microservices, providing organized resource management and isolation within the EKS cluster.
-
-   - **ArgoCD Namespace**: 
-   - Used exclusively for ArgoCD, enabling secure access control and streamlined GitOps operations separate from the application workloads.
-
-   - **Monitoring Namespace**: 
-   - Contains the monitoring stack, including Prometheus and Grafana, for centralized metrics collection and visualization of application and infrastructure performance.
+   - **Microservices Namespace**: Dedicated to deploying all application microservices, providing organized resource management and isolation within the EKS cluster.
+   - **ArgoCD Namespace**: Used exclusively for ArgoCD, enabling secure access control and streamlined GitOps operations separate from the application workloads.
+   - **Monitoring Namespace**: Contains the monitoring stack, including Prometheus and Grafana, for centralized metrics collection and visualization of application and infrastructure performance.
    
 8. **Deploying the Monitoring Stack with Helm**  
    - **Helm Chart**: Prometheus and Grafana are deployed using a Helm chart.
@@ -83,7 +78,7 @@ The pipeline automates the full lifecycle of building, deploying, and monitoring
    - **Microservices Load Balancer**: Distributes incoming traffic across frontend replicas, ensuring resilience and availability for the application's main interface.
    - **ArgoCD Load Balancer**: Provides external access to ArgoCD for managing and synchronizing application deployments.
    - **Grafana Load Balancer**: Allows secure, external access to Grafana dashboards for monitoring microservices and infrastructure performance.
-    - **Auto-scaling**: Kubernetes dynamically adjusts the number of pod replicas based on load, maintaining optimal performance during high-traffic periods.
+   - **Auto-scaling**: Kubernetes dynamically adjusts the number of pod replicas based on load, maintaining optimal performance during high-traffic periods.
 
 ### Application Monitoring
 
