@@ -260,7 +260,7 @@ spec:
                 - ALL
             privileged: false
             readOnlyRootFilesystem: true
-          image: lakshithaiam/checkoutservice:v7
+          image: lakshithaiam/checkoutservice:v7.2
           ports:
           - containerPort: 5050
           readinessProbe:
